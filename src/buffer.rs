@@ -90,6 +90,10 @@ impl<'a, T: 'a + Float> ChannelBuffer<'a, T> {
         }
     }
 
+    pub fn mut_slice(&mut self) -> & mut [T] {
+        self.data
+    }
+
     pub fn slice(&self) -> &[T] {
         self.data
     }
