@@ -88,7 +88,6 @@ macro_rules! vst_main {
         }
 
         #[cfg(target_os = "windows")]
-        #![allow(non_snake_case)]
         pub extern "system" fn MAIN (callback: $crate::api::HostCallback) -> *mut $crate::api::AEffect {
             VSTPluginMain(callback)
         }
