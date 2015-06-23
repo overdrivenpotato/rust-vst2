@@ -55,7 +55,7 @@ impl<'a, T: 'a + Float> AudioBuffer<'a, T> {
     pub fn input(&'a mut self, index: usize) -> Option<&'a mut ChannelBuffer<'a, T>> {
         self.inputs.get_mut(index)
     }
- 
+
     /// Retreieve output at specified index.
     pub fn output(&'a mut self, index: usize) -> Option<&'a mut ChannelBuffer<'a, T>> {
         self.outputs.get_mut(index)
@@ -88,6 +88,14 @@ impl<'a, T: 'a + Float> ChannelBuffer<'a, T> {
         ChannelBuffer {
             data: data
         }
+    }
+
+    pub fn mut_slice(self) -> &'a mut [T] {
+        self.data
+    }
+
+    pub fn slice(self) -> &'a [T] {
+        self.data
     }
 }
 
