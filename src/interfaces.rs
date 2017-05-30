@@ -93,6 +93,8 @@ pub fn dispatch(effect: *mut AEffect, opcode: i32, index: i32, value: isize, ptr
             copy_string(&plugin.get_preset_name(num), MAX_PRESET_NAME_LEN);
         }
 
+        OpCode::GetMidiKeyName => copy_string(&plugin.get_midi_key_name(index), MAX_PARAM_STR_LEN),
+
         OpCode::GetParameterLabel => copy_string(&plugin.get_parameter_label(index), MAX_PARAM_STR_LEN),
         OpCode::GetParameterDisplay => copy_string(&plugin.get_parameter_text(index), MAX_PARAM_STR_LEN),
         OpCode::GetParameterName => copy_string(&plugin.get_parameter_name(index), MAX_PARAM_STR_LEN),
