@@ -502,8 +502,6 @@ pub trait Plugin {
     /// Called when plugin is fully initialized.
     fn init(&mut self) { trace!("Initialized vst plugin."); }
 
-    fn has_cockos_view_as_config(&self) -> i32 { info!("Cockos support supplied."); 0xbeef0000_i32 as i32 }
-
     /// Set the current preset to the index specified by `preset`.
     fn change_preset(&mut self, preset: i32) { }
 
