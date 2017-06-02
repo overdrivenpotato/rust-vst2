@@ -397,6 +397,8 @@ pub enum CanDo {
     MidiSingleNoteTuningChange,
     MidiKeyBasedInstrumentControl,
 
+    HasCockosViewAsConfig,
+
     Other(String)
 }
 
