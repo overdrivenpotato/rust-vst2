@@ -84,7 +84,6 @@ pub fn dispatch(effect: *mut AEffect, opcode: i32, index: i32, value: isize, ptr
             (*effect).drop_plugin();
             drop(mem::transmute::<*mut AEffect, Box<AEffect>>(effect));
         },
-        OpCode::HasCockosViewAsConfig => return plugin.has_cockos_view_as_config() as isize,
 
         OpCode::ChangePreset => plugin.change_preset(value as i32),
         OpCode::GetCurrentPresetNum => return plugin.get_preset_num() as isize,

@@ -291,8 +291,6 @@ pub enum OpCode {
     GetNumMidiInputs,
     /// [return]: number of used MIDI Outputs (1-15).
     GetNumMidiOutputs,
-
-    HasCockosViewAsConfig,
 }
 impl_clike!(OpCode);
 
@@ -397,8 +395,6 @@ pub enum CanDo {
     MidiSingleNoteTuningChange,
     MidiKeyBasedInstrumentControl,
 
-    HasCockosViewAsConfig,
-
     Other(String)
 }
 
@@ -422,7 +418,6 @@ impl FromStr for CanDo {
             "receiveVstSysexEvent" => ReceiveSysExEvent,
             "midiSingleNoteTuningChange" => MidiSingleNoteTuningChange,
             "midiKeyBasedInstrumentControl" => MidiKeyBasedInstrumentControl,
-            "hasCockosViewAsConfig" => HasCockosViewAsConfig,
             otherwise => Other(otherwise.to_string())
         })
     }
@@ -445,7 +440,6 @@ impl Into<String> for CanDo {
             ReceiveSysExEvent => "receiveVstSysexEvent".to_string(),
             MidiSingleNoteTuningChange => "midiSingleNoteTuningChange".to_string(),
             MidiKeyBasedInstrumentControl => "midiKeyBasedInstrumentControl".to_string(),
-            HasCockosViewAsConfig => "hasCockosViewAsConfig".to_string(),
             Other(other) => other
         }
     }
@@ -508,7 +502,7 @@ pub trait Plugin {
     /// Called when plugin is fully initialized.
     fn init(&mut self) { trace!("Initialized vst plugin."); }
 
-    fn has_cockos_view_as_config(&self) -> i32 { 0xbeef0000_i32 as i32 }
+    fn has_cockos_view_as_config(&self) -> i32 { info!("Cockos support supplied."); 0xbeef0000_i32 as i32 }
 
     /// Set the current preset to the index specified by `preset`.
     fn change_preset(&mut self, preset: i32) { }

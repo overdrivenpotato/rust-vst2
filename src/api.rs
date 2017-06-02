@@ -253,7 +253,8 @@ pub enum SpeakerArrangementType {
 pub enum Supported {
     Yes,
     Maybe,
-    No
+    No,
+    Other(isize),
 }
 
 impl Supported {
@@ -278,7 +279,8 @@ impl Into<isize> for Supported {
         match self {
             Yes => 1,
             Maybe => 0,
-            No => -1
+            No => -1,
+            Other(val) => val,
         }
     }
 }
