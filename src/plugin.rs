@@ -249,7 +249,7 @@ pub enum OpCode {
     /// [return]: 1 if `MidiProgramName` or `MidiKeyName` has changed. //TODO: Implement
     HasMidiProgramsChanged,
     /// [index]: MIDI channel.
-    /// [ptr]: `*mut MidiKeyName`. //TODO: Implement
+    /// [ptr]: `*mut MidiKeyName`.
     /// [return]: 1 = supported 0 = not.
     GetMidiKeyName,
 
@@ -502,7 +502,6 @@ pub trait Plugin {
     /// Called when plugin is fully initialized.
     fn init(&mut self) { trace!("Initialized vst plugin."); }
 
-
     /// Set the current preset to the index specified by `preset`.
     fn change_preset(&mut self, preset: i32) { }
 
@@ -518,6 +517,9 @@ pub trait Plugin {
 
     /// Get parameter label for parameter at `index` (e.g. "db", "sec", "ms", "%").
     fn get_parameter_label(&self, index: i32) -> String { "".to_string() }
+
+    /// Get a string name for a midi key.
+    fn get_midi_key_name(&self, index: i32) -> String { "".to_string() }
 
     /// Get the parameter value for parameter at `index` (e.g. "1.0", "150", "Plate", "Off").
     fn get_parameter_text(&self, index: i32) -> String {
