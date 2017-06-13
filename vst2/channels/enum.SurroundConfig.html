@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `SurroundConfig` enum in crate `vst2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, SurroundConfig">
+
+    <title>vst2::channels::SurroundConfig - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum SurroundConfig</p><div class="block items"><ul><li><a href="#variants">Variants</a></li></ul></div><p class='location'><a href='../index.html'>vst2</a>::<wbr><a href='index.html'>channels</a></p><script>window.sidebarCurrent = {name: 'SurroundConfig', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>vst2</a>::<wbr><a href='index.html'>channels</a>::<wbr><a class="enum" href=''>SurroundConfig</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/vst2/channels.rs.html#126-176' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum SurroundConfig {
+    S3_0(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>),
+    S3_1(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>),
+    S4_0(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>),
+    S4_1(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>),
+    S5_0,
+    S5_1,
+    S6_0(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>),
+    S6_1(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>),
+    S7_0(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>),
+    S7_1(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>),
+    S8_0(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>),
+    S8_1(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>),
+    S10_2,
+}</pre><div class='docblock'><p>Possible surround speaker configurations.</p>
+</div><h2 id='variants' class='variants'>Variants</h2>
+<span id='variant.S3_0' class='variant'><span id='S3_0.v' class='invisible'><code>S3_0(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>)</code></span></span><div class='docblock'><p>3.0 surround sound.
+Cinema: L R C
+Music: L R S</p>
+</div><span id='variant.S3_1' class='variant'><span id='S3_1.v' class='invisible'><code>S3_1(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>)</code></span></span><div class='docblock'><p>3.1 surround sound.
+Cinema: L R C Lfe
+Music: L R Lfe S</p>
+</div><span id='variant.S4_0' class='variant'><span id='S4_0.v' class='invisible'><code>S4_0(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>)</code></span></span><div class='docblock'><p>4.0 surround sound.
+Cinema: L R C S (LCRS)
+Music: L R Ls Rs (Quadro)</p>
+</div><span id='variant.S4_1' class='variant'><span id='S4_1.v' class='invisible'><code>S4_1(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>)</code></span></span><div class='docblock'><p>4.1 surround sound.
+Cinema: L R C Lfe S (LCRS + Lfe)
+Music: L R Ls Rs (Quadro + Lfe)</p>
+</div><span id='variant.S5_0' class='variant'><span id='S5_0.v' class='invisible'><code>S5_0</code></span></span><div class='docblock'><p>5.0 surround sound.
+Cinema and music: L R C Ls Rs</p>
+</div><span id='variant.S5_1' class='variant'><span id='S5_1.v' class='invisible'><code>S5_1</code></span></span><div class='docblock'><p>5.1 surround sound.
+Cinema and music: L R C Lfe Ls Rs</p>
+</div><span id='variant.S6_0' class='variant'><span id='S6_0.v' class='invisible'><code>S6_0(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>)</code></span></span><div class='docblock'><p>6.0 surround sound.
+Cinema: L R C Ls Rs Cs
+Music: L R Ls Rs Sl Sr</p>
+</div><span id='variant.S6_1' class='variant'><span id='S6_1.v' class='invisible'><code>S6_1(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>)</code></span></span><div class='docblock'><p>6.1 surround sound.
+Cinema: L R C Lfe Ls Rs Cs
+Music: L R Ls Rs Sl Sr</p>
+</div><span id='variant.S7_0' class='variant'><span id='S7_0.v' class='invisible'><code>S7_0(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>)</code></span></span><div class='docblock'><p>7.0 surround sound.
+Cinema: L R C Ls Rs Lc Rc
+Music: L R C Ls Rs Sl Sr</p>
+</div><span id='variant.S7_1' class='variant'><span id='S7_1.v' class='invisible'><code>S7_1(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>)</code></span></span><div class='docblock'><p>7.1 surround sound.
+Cinema: L R C Lfe Ls Rs Lc Rc
+Music: L R C Lfe Ls Rs Sl Sr</p>
+</div><span id='variant.S8_0' class='variant'><span id='S8_0.v' class='invisible'><code>S8_0(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>)</code></span></span><div class='docblock'><p>8.0 surround sound.
+Cinema: L R C Ls Rs Lc Rc Cs
+Music: L R C Ls Rs Cs Sl Sr</p>
+</div><span id='variant.S8_1' class='variant'><span id='S8_1.v' class='invisible'><code>S8_1(<a class="enum" href="../../vst2/channels/enum.ArrangementTarget.html" title="enum vst2::channels::ArrangementTarget">ArrangementTarget</a>)</code></span></span><div class='docblock'><p>8.1 surround sound.
+Cinema: L R C Lfe Ls Rs Lc Rc Cs
+Music: L R C Lfe Ls Rs Cs Sl Sr</p>
+</div><span id='variant.S10_2' class='variant'><span id='S10_2.v' class='invisible'><code>S10_2</code></span></span><div class='docblock'><p>10.2 surround sound.
+Cinema + Music: L R C Lfe Ls Rs Tfl Tfc Tfr Trl Trr Lfe2</p>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vst2";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

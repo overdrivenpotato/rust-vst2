@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `SpeakerArrangementType` enum in crate `vst2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, SpeakerArrangementType">
+
+    <title>vst2::api::SpeakerArrangementType - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum SpeakerArrangementType</p><div class="block items"><ul><li><a href="#variants">Variants</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../index.html'>vst2</a>::<wbr><a href='index.html'>api</a></p><script>window.sidebarCurrent = {name: 'SpeakerArrangementType', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>vst2</a>::<wbr><a href='index.html'>api</a>::<wbr><a class="enum" href=''>SpeakerArrangementType</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/vst2/api.rs.html#171-248' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'><div class="docblock attributes">#[repr(i32)]
+</div>pub enum SpeakerArrangementType {
+    Custom,
+    Empty,
+    Mono,
+    Stereo,
+    StereoSurround,
+    StereoCenter,
+    StereoSide,
+    StereoCLfe,
+    Cinema30,
+    Music30,
+    Cinema31,
+    Music31,
+    Cinema40,
+    Music40,
+    Cinema41,
+    Music41,
+    Surround50,
+    Surround51,
+    Cinema60,
+    Music60,
+    Cinema61,
+    Music61,
+    Cinema70,
+    Music70,
+    Cinema71,
+    Music71,
+    Cinema80,
+    Music80,
+    Cinema81,
+    Music81,
+    Surround102,
+}</pre><div class='docblock'><p>Tells the host how the channels are intended to be used in the plugin. Only useful for some
+hosts.</p>
+</div><h2 id='variants' class='variants'>Variants</h2>
+<span id='variant.Custom' class='variant'><span id='Custom.v' class='invisible'><code>Custom</code></span></span><div class='docblock'><p>User defined arrangement.</p>
+</div><span id='variant.Empty' class='variant'><span id='Empty.v' class='invisible'><code>Empty</code></span></span><div class='docblock'><p>Empty arrangement.</p>
+</div><span id='variant.Mono' class='variant'><span id='Mono.v' class='invisible'><code>Mono</code></span></span><div class='docblock'><p>Mono.</p>
+</div><span id='variant.Stereo' class='variant'><span id='Stereo.v' class='invisible'><code>Stereo</code></span></span><div class='docblock'><p>L R</p>
+</div><span id='variant.StereoSurround' class='variant'><span id='StereoSurround.v' class='invisible'><code>StereoSurround</code></span></span><div class='docblock'><p>Ls Rs</p>
+</div><span id='variant.StereoCenter' class='variant'><span id='StereoCenter.v' class='invisible'><code>StereoCenter</code></span></span><div class='docblock'><p>Lc Rc</p>
+</div><span id='variant.StereoSide' class='variant'><span id='StereoSide.v' class='invisible'><code>StereoSide</code></span></span><div class='docblock'><p>Sl Sr</p>
+</div><span id='variant.StereoCLfe' class='variant'><span id='StereoCLfe.v' class='invisible'><code>StereoCLfe</code></span></span><div class='docblock'><p>C Lfe</p>
+</div><span id='variant.Cinema30' class='variant'><span id='Cinema30.v' class='invisible'><code>Cinema30</code></span></span><div class='docblock'><p>L R C</p>
+</div><span id='variant.Music30' class='variant'><span id='Music30.v' class='invisible'><code>Music30</code></span></span><div class='docblock'><p>L R S</p>
+</div><span id='variant.Cinema31' class='variant'><span id='Cinema31.v' class='invisible'><code>Cinema31</code></span></span><div class='docblock'><p>L R C Lfe</p>
+</div><span id='variant.Music31' class='variant'><span id='Music31.v' class='invisible'><code>Music31</code></span></span><div class='docblock'><p>L R Lfe S</p>
+</div><span id='variant.Cinema40' class='variant'><span id='Cinema40.v' class='invisible'><code>Cinema40</code></span></span><div class='docblock'><p>L R C S (LCRS)</p>
+</div><span id='variant.Music40' class='variant'><span id='Music40.v' class='invisible'><code>Music40</code></span></span><div class='docblock'><p>L R Ls Rs (Quadro)</p>
+</div><span id='variant.Cinema41' class='variant'><span id='Cinema41.v' class='invisible'><code>Cinema41</code></span></span><div class='docblock'><p>L R C Lfe S (LCRS + Lfe)</p>
+</div><span id='variant.Music41' class='variant'><span id='Music41.v' class='invisible'><code>Music41</code></span></span><div class='docblock'><p>L R Lfe Ls Rs (Quadro + Lfe)</p>
+</div><span id='variant.Surround50' class='variant'><span id='Surround50.v' class='invisible'><code>Surround50</code></span></span><div class='docblock'><p>L R C Ls Rs</p>
+</div><span id='variant.Surround51' class='variant'><span id='Surround51.v' class='invisible'><code>Surround51</code></span></span><div class='docblock'><p>L R C Lfe Ls Rs</p>
+</div><span id='variant.Cinema60' class='variant'><span id='Cinema60.v' class='invisible'><code>Cinema60</code></span></span><div class='docblock'><p>L R C Ls  Rs Cs</p>
+</div><span id='variant.Music60' class='variant'><span id='Music60.v' class='invisible'><code>Music60</code></span></span><div class='docblock'><p>L R Ls Rs  Sl Sr</p>
+</div><span id='variant.Cinema61' class='variant'><span id='Cinema61.v' class='invisible'><code>Cinema61</code></span></span><div class='docblock'><p>L R C Lfe Ls Rs Cs</p>
+</div><span id='variant.Music61' class='variant'><span id='Music61.v' class='invisible'><code>Music61</code></span></span><div class='docblock'><p>L R Lfe Ls Rs Sl Sr</p>
+</div><span id='variant.Cinema70' class='variant'><span id='Cinema70.v' class='invisible'><code>Cinema70</code></span></span><div class='docblock'><p>L R C Ls Rs Lc Rc</p>
+</div><span id='variant.Music70' class='variant'><span id='Music70.v' class='invisible'><code>Music70</code></span></span><div class='docblock'><p>L R C Ls Rs Sl Sr</p>
+</div><span id='variant.Cinema71' class='variant'><span id='Cinema71.v' class='invisible'><code>Cinema71</code></span></span><div class='docblock'><p>L R C Lfe Ls Rs Lc Rc</p>
+</div><span id='variant.Music71' class='variant'><span id='Music71.v' class='invisible'><code>Music71</code></span></span><div class='docblock'><p>L R C Lfe Ls Rs Sl Sr</p>
+</div><span id='variant.Cinema80' class='variant'><span id='Cinema80.v' class='invisible'><code>Cinema80</code></span></span><div class='docblock'><p>L R C Ls Rs Lc Rc Cs</p>
+</div><span id='variant.Music80' class='variant'><span id='Music80.v' class='invisible'><code>Music80</code></span></span><div class='docblock'><p>L R C Ls Rs Cs Sl Sr</p>
+</div><span id='variant.Cinema81' class='variant'><span id='Cinema81.v' class='invisible'><code>Cinema81</code></span></span><div class='docblock'><p>L R C Lfe Ls Rs Lc Rc Cs</p>
+</div><span id='variant.Music81' class='variant'><span id='Music81.v' class='invisible'><code>Music81</code></span></span><div class='docblock'><p>L R C Lfe Ls Rs Cs Sl Sr</p>
+</div><span id='variant.Surround102' class='variant'><span id='Surround102.v' class='invisible'><code>Surround102</code></span></span><div class='docblock'><p>L R C Lfe Ls Rs Tfl Tfc Tfr Trl Trr Lfe2</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../../vst2/api/enum.SpeakerArrangementType.html" title="enum vst2::api::SpeakerArrangementType">SpeakerArrangementType</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/vst2/api.rs.html#170' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../../vst2/api/enum.SpeakerArrangementType.html" title="enum vst2::api::SpeakerArrangementType">SpeakerArrangementType</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="enum" href="../../vst2/api/enum.SpeakerArrangementType.html" title="enum vst2::api::SpeakerArrangementType">SpeakerArrangementType</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/vst2/api.rs.html#170' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vst2";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

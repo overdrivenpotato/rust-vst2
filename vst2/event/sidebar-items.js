@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Event","A VST event."]]});

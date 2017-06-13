@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `FileSelect` struct in crate `vst2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, FileSelect">
+
+    <title>vst2::api::FileSelect - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct FileSelect</p><div class="block items"><ul><li><a href="#fields">Fields</a></li></ul></div><p class='location'><a href='../index.html'>vst2</a>::<wbr><a href='index.html'>api</a></p><script>window.sidebarCurrent = {name: 'FileSelect', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>vst2</a>::<wbr><a href='index.html'>api</a>::<wbr><a class="struct" href=''>FileSelect</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/vst2/api.rs.html#354-384' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct FileSelect {
+    pub command: <a class="enum" href="../../vst2/api/enum.FileSelectCommand.html" title="enum vst2::api::FileSelectCommand">FileSelectCommand</a>,
+    pub select_type: <a class="enum" href="../../vst2/api/enum.FileSelectType.html" title="enum vst2::api::FileSelectType">FileSelectType</a>,
+    pub mac_creator: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    pub num_types: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    pub file_types: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../vst2/api/struct.FileType.html" title="struct vst2::api::FileType">FileType</a>,
+    pub title: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 1024]</a>,
+    pub initial_path: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub return_path: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub size_return_path: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    pub return_multiple_paths: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub num_paths: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    pub reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.isize.html">isize</a>,
+    pub future: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 116]</a>,
+}</pre><div class='docblock'><p>File selector descriptor used in <code>host::OpCode::OpenFileSelector</code>.</p>
+</div><h2 id='fields' class='fields'>Fields</h2><span id='structfield.command' class="structfield">
+                           <span id='command.v' class='invisible'>
+                           <code>command: <a class="enum" href="../../vst2/api/enum.FileSelectCommand.html" title="enum vst2::api::FileSelectCommand">FileSelectCommand</a></code>
+                           </span></span><div class='docblock'><p>The type of file selection to perform.</p>
+</div><span id='structfield.select_type' class="structfield">
+                           <span id='select_type.v' class='invisible'>
+                           <code>select_type: <a class="enum" href="../../vst2/api/enum.FileSelectType.html" title="enum vst2::api::FileSelectType">FileSelectType</a></code>
+                           </span></span><div class='docblock'><p>The file selector to open.</p>
+</div><span id='structfield.mac_creator' class="structfield">
+                           <span id='mac_creator.v' class='invisible'>
+                           <code>mac_creator: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code>
+                           </span></span><div class='docblock'><p>Unknown. 0 = no creator.</p>
+</div><span id='structfield.num_types' class="structfield">
+                           <span id='num_types.v' class='invisible'>
+                           <code>num_types: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code>
+                           </span></span><div class='docblock'><p>Number of file types.</p>
+</div><span id='structfield.file_types' class="structfield">
+                           <span id='file_types.v' class='invisible'>
+                           <code>file_types: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../vst2/api/struct.FileType.html" title="struct vst2::api::FileType">FileType</a></code>
+                           </span></span><div class='docblock'><p>List of file types to show.</p>
+</div><span id='structfield.title' class="structfield">
+                           <span id='title.v' class='invisible'>
+                           <code>title: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 1024]</a></code>
+                           </span></span><div class='docblock'><p>File selector&#39;s title.</p>
+</div><span id='structfield.initial_path' class="structfield">
+                           <span id='initial_path.v' class='invisible'>
+                           <code>initial_path: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><div class='docblock'><p>Initial path.</p>
+</div><span id='structfield.return_path' class="structfield">
+                           <span id='return_path.v' class='invisible'>
+                           <code>return_path: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><div class='docblock'><p>Used when operation returns a single path.</p>
+</div><span id='structfield.size_return_path' class="structfield">
+                           <span id='size_return_path.v' class='invisible'>
+                           <code>size_return_path: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code>
+                           </span></span><div class='docblock'><p>Size of the path buffer in bytes.</p>
+</div><span id='structfield.return_multiple_paths' class="structfield">
+                           <span id='return_multiple_paths.v' class='invisible'>
+                           <code>return_multiple_paths: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><div class='docblock'><p>Used when operation returns multiple paths.</p>
+</div><span id='structfield.num_paths' class="structfield">
+                           <span id='num_paths.v' class='invisible'>
+                           <code>num_paths: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code>
+                           </span></span><div class='docblock'><p>Number of paths returned.</p>
+</div><span id='structfield.reserved' class="structfield">
+                           <span id='reserved.v' class='invisible'>
+                           <code>reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.isize.html">isize</a></code>
+                           </span></span><div class='docblock'><p>Reserved by host.</p>
+</div><span id='structfield.future' class="structfield">
+                           <span id='future.v' class='invisible'>
+                           <code>future: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 116]</a></code>
+                           </span></span><div class='docblock'><p>Reserved for future use.</p>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vst2";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

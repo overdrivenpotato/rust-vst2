@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AudioBuffer","A buffer containing `ChannelBuffer` buffers for each input/output."]],"type":[["ChannelBufferIter","Iterator over channel buffers for either inputs or outputs."]]});

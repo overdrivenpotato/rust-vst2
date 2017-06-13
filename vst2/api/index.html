@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `api` mod in crate `vst2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, api">
+
+    <title>vst2::api - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module api</p><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#types">Type Definitions</a></li></ul></div><p class='location'><a href='../index.html'>vst2</a></p><script>window.sidebarCurrent = {name: 'api', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>vst2</a>::<wbr><a class="mod" href=''>api</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/vst2/api.rs.html#1-621' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Structures and types for interfacing with the VST 2.4 API.</p>
+</div><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="consts/index.html"
+                                  title='mod vst2::api::consts'>consts</a></td>
+                           <td class='docblock-short'>
+                                <p>Constant values</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="flags/index.html"
+                                  title='mod vst2::api::flags'>flags</a></td>
+                           <td class='docblock-short'>
+                                <p>Bitflags.</p>
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AEffect.html"
+                                  title='struct vst2::api::AEffect'>AEffect</a></td>
+                           <td class='docblock-short'>
+                                <p>Used with the VST API to pass around plugin information.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ChannelProperties.html"
+                                  title='struct vst2::api::ChannelProperties'>ChannelProperties</a></td>
+                           <td class='docblock-short'>
+                                <p>Information about a channel. Only some hosts use this information.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Event.html"
+                                  title='struct vst2::api::Event'>Event</a></td>
+                           <td class='docblock-short'>
+                                <p>A VST event intended to be casted to a corresponding type.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Events.html"
+                                  title='struct vst2::api::Events'>Events</a></td>
+                           <td class='docblock-short'>
+                                <p>A struct which contains events.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.FileSelect.html"
+                                  title='struct vst2::api::FileSelect'>FileSelect</a></td>
+                           <td class='docblock-short'>
+                                <p>File selector descriptor used in <code>host::OpCode::OpenFileSelector</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.FileType.html"
+                                  title='struct vst2::api::FileType'>FileType</a></td>
+                           <td class='docblock-short'>
+                                <p>File type descriptor.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.MidiEvent.html"
+                                  title='struct vst2::api::MidiEvent'>MidiEvent</a></td>
+                           <td class='docblock-short'>
+                                <p>A midi event.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.SysExEvent.html"
+                                  title='struct vst2::api::SysExEvent'>SysExEvent</a></td>
+                           <td class='docblock-short'>
+                                <p>A midi system exclusive event.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.EventType.html"
+                                  title='enum vst2::api::EventType'>EventType</a></td>
+                           <td class='docblock-short'>
+                                <p>The type of event that has occured. See <code>api::Event.event_type</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FileSelectCommand.html"
+                                  title='enum vst2::api::FileSelectCommand'>FileSelectCommand</a></td>
+                           <td class='docblock-short'>
+                                <p>The file operation to perform.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FileSelectType.html"
+                                  title='enum vst2::api::FileSelectType'>FileSelectType</a></td>
+                           <td class='docblock-short'>
+                                <p>Format to select files.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.HostLanguage.html"
+                                  title='enum vst2::api::HostLanguage'>HostLanguage</a></td>
+                           <td class='docblock-short'>
+                                <p>Language that the host is using.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ProcessLevel.html"
+                                  title='enum vst2::api::ProcessLevel'>ProcessLevel</a></td>
+                           <td class='docblock-short'>
+                                <p>Denotes in which thread the host is in.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.SpeakerArrangementType.html"
+                                  title='enum vst2::api::SpeakerArrangementType'>SpeakerArrangementType</a></td>
+                           <td class='docblock-short'>
+                                <p>Tells the host how the channels are intended to be used in the plugin. Only useful for some
+hosts.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.Supported.html"
+                                  title='enum vst2::api::Supported'>Supported</a></td>
+                           <td class='docblock-short'>
+                                <p>Used to specify whether functionality is supported.</p>
+                           </td>
+                       </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.DispatcherProc.html"
+                                  title='type vst2::api::DispatcherProc'>DispatcherProc</a></td>
+                           <td class='docblock-short'>
+                                <p>Dispatcher function used to process opcodes. Called by host.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.GetParameterProc.html"
+                                  title='type vst2::api::GetParameterProc'>GetParameterProc</a></td>
+                           <td class='docblock-short'>
+                                <p>Callback function used to get parameter values. Called by host.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.HostCallbackProc.html"
+                                  title='type vst2::api::HostCallbackProc'>HostCallbackProc</a></td>
+                           <td class='docblock-short'>
+                                <p>Host callback function passed to plugin. Can be used to query host information from plugin side.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.PluginMain.html"
+                                  title='type vst2::api::PluginMain'>PluginMain</a></td>
+                           <td class='docblock-short'>
+                                <p><code>VSTPluginMain</code> function signature.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.ProcessProc.html"
+                                  title='type vst2::api::ProcessProc'>ProcessProc</a></td>
+                           <td class='docblock-short'>
+                                <p>Process function used to process 32 bit floating point samples. Called by host.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.ProcessProcF64.html"
+                                  title='type vst2::api::ProcessProcF64'>ProcessProcF64</a></td>
+                           <td class='docblock-short'>
+                                <p>Process function used to process 64 bit floating point samples. Called by host.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.SetParameterProc.html"
+                                  title='type vst2::api::SetParameterProc'>SetParameterProc</a></td>
+                           <td class='docblock-short'>
+                                <p>Callback function used to set parameter values. Called by host.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vst2";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

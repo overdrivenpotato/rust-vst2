@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `AEffect` struct in crate `vst2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, AEffect">
+
+    <title>vst2::api::AEffect - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct AEffect</p><div class="block items"><ul><li><a href="#fields">Fields</a></li><li><a href="#methods">Methods</a></li></ul></div><p class='location'><a href='../index.html'>vst2</a>::<wbr><a href='index.html'>api</a></p><script>window.sidebarCurrent = {name: 'AEffect', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>vst2</a>::<wbr><a href='index.html'>api</a>::<wbr><a class="struct" href=''>AEffect</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/vst2/api.rs.html#51-133' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct AEffect {
+    pub magic: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    pub dispatcher: <a class="type" href="../../vst2/api/type.DispatcherProc.html" title="type vst2::api::DispatcherProc">DispatcherProc</a>,
+    pub _process: <a class="type" href="../../vst2/api/type.ProcessProc.html" title="type vst2::api::ProcessProc">ProcessProc</a>,
+    pub setParameter: <a class="type" href="../../vst2/api/type.SetParameterProc.html" title="type vst2::api::SetParameterProc">SetParameterProc</a>,
+    pub getParameter: <a class="type" href="../../vst2/api/type.GetParameterProc.html" title="type vst2::api::GetParameterProc">GetParameterProc</a>,
+    pub numPrograms: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    pub numParams: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    pub numInputs: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    pub numOutputs: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    pub flags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    pub reserved1: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.isize.html">isize</a>,
+    pub reserved2: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.isize.html">isize</a>,
+    pub initialDelay: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    pub _realQualities: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    pub _offQualities: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    pub _ioRatio: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>,
+    pub object: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/std/os/raw/enum.c_void.html" title="enum std::os::raw::c_void">c_void</a>,
+    pub user: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/std/os/raw/enum.c_void.html" title="enum std::os::raw::c_void">c_void</a>,
+    pub uniqueId: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    pub version: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    pub processReplacing: <a class="type" href="../../vst2/api/type.ProcessProc.html" title="type vst2::api::ProcessProc">ProcessProc</a>,
+    pub processReplacingF64: <a class="type" href="../../vst2/api/type.ProcessProcF64.html" title="type vst2::api::ProcessProcF64">ProcessProcF64</a>,
+    pub future: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 56]</a>,
+}</pre><div class='docblock'><p>Used with the VST API to pass around plugin information.</p>
+</div><h2 id='fields' class='fields'>Fields</h2><span id='structfield.magic' class="structfield">
+                           <span id='magic.v' class='invisible'>
+                           <code>magic: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code>
+                           </span></span><div class='docblock'><p>Magic number. Must be <code>[&#39;V&#39;, &#39;S&#39;, &#39;T&#39;, &#39;P&#39;]</code>.</p>
+</div><span id='structfield.dispatcher' class="structfield">
+                           <span id='dispatcher.v' class='invisible'>
+                           <code>dispatcher: <a class="type" href="../../vst2/api/type.DispatcherProc.html" title="type vst2::api::DispatcherProc">DispatcherProc</a></code>
+                           </span></span><div class='docblock'><p>Host to plug-in dispatcher.</p>
+</div><span id='structfield._process' class="structfield">
+                           <span id='_process.v' class='invisible'>
+                           <code>_process: <a class="type" href="../../vst2/api/type.ProcessProc.html" title="type vst2::api::ProcessProc">ProcessProc</a></code>
+                           </span></span><div class='docblock'><p>Accumulating process mode is deprecated in VST 2.4! Use <code>processReplacing</code> instead!</p>
+</div><span id='structfield.setParameter' class="structfield">
+                           <span id='setParameter.v' class='invisible'>
+                           <code>setParameter: <a class="type" href="../../vst2/api/type.SetParameterProc.html" title="type vst2::api::SetParameterProc">SetParameterProc</a></code>
+                           </span></span><div class='docblock'><p>Set value of automatable parameter.</p>
+</div><span id='structfield.getParameter' class="structfield">
+                           <span id='getParameter.v' class='invisible'>
+                           <code>getParameter: <a class="type" href="../../vst2/api/type.GetParameterProc.html" title="type vst2::api::GetParameterProc">GetParameterProc</a></code>
+                           </span></span><div class='docblock'><p>Get value of automatable parameter.</p>
+</div><span id='structfield.numPrograms' class="structfield">
+                           <span id='numPrograms.v' class='invisible'>
+                           <code>numPrograms: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code>
+                           </span></span><div class='docblock'><p>Number of programs (Presets).</p>
+</div><span id='structfield.numParams' class="structfield">
+                           <span id='numParams.v' class='invisible'>
+                           <code>numParams: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code>
+                           </span></span><div class='docblock'><p>Number of parameters. All programs are assumed to have this many parameters.</p>
+</div><span id='structfield.numInputs' class="structfield">
+                           <span id='numInputs.v' class='invisible'>
+                           <code>numInputs: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code>
+                           </span></span><div class='docblock'><p>Number of audio inputs.</p>
+</div><span id='structfield.numOutputs' class="structfield">
+                           <span id='numOutputs.v' class='invisible'>
+                           <code>numOutputs: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code>
+                           </span></span><div class='docblock'><p>Number of audio outputs.</p>
+</div><span id='structfield.flags' class="structfield">
+                           <span id='flags.v' class='invisible'>
+                           <code>flags: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code>
+                           </span></span><div class='docblock'><p>Bitmask made of values from api::flags.</p>
+
+<pre class="rust rust-example-rendered">
+<span class="kw">use</span> <span class="ident">vst2</span>::<span class="ident">api</span>::<span class="ident">flags</span>;
+<span class="kw">let</span> <span class="ident">flags</span> <span class="op">=</span> <span class="ident">flags</span>::<span class="ident">CAN_REPLACING</span> <span class="op">|</span> <span class="ident">flags</span>::<span class="ident">CAN_DOUBLE_REPLACING</span>;
+<span class="comment">// ...</span></pre>
+</div><span id='structfield.reserved1' class="structfield">
+                           <span id='reserved1.v' class='invisible'>
+                           <code>reserved1: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.isize.html">isize</a></code>
+                           </span></span><div class='docblock'><p>Reserved for host, must be 0.</p>
+</div><span id='structfield.reserved2' class="structfield">
+                           <span id='reserved2.v' class='invisible'>
+                           <code>reserved2: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.isize.html">isize</a></code>
+                           </span></span><div class='docblock'><p>Reserved for host, must be 0.</p>
+</div><span id='structfield.initialDelay' class="structfield">
+                           <span id='initialDelay.v' class='invisible'>
+                           <code>initialDelay: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code>
+                           </span></span><div class='docblock'><p>For algorithms which need input in the first place (Group delay or latency in samples).</p>
+
+<p>This value should be initially in a resume state.</p>
+</div><span id='structfield._realQualities' class="structfield">
+                           <span id='_realQualities.v' class='invisible'>
+                           <code>_realQualities: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code>
+                           </span></span><div class='docblock'><p>Deprecated unused member.</p>
+</div><span id='structfield._offQualities' class="structfield">
+                           <span id='_offQualities.v' class='invisible'>
+                           <code>_offQualities: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code>
+                           </span></span><div class='docblock'><p>Deprecated unused member.</p>
+</div><span id='structfield._ioRatio' class="structfield">
+                           <span id='_ioRatio.v' class='invisible'>
+                           <code>_ioRatio: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a></code>
+                           </span></span><div class='docblock'><p>Deprecated unused member.</p>
+</div><span id='structfield.object' class="structfield">
+                           <span id='object.v' class='invisible'>
+                           <code>object: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/std/os/raw/enum.c_void.html" title="enum std::os::raw::c_void">c_void</a></code>
+                           </span></span><div class='docblock'><p>Void pointer usable by api to store object data.</p>
+</div><span id='structfield.user' class="structfield">
+                           <span id='user.v' class='invisible'>
+                           <code>user: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/nightly/std/os/raw/enum.c_void.html" title="enum std::os::raw::c_void">c_void</a></code>
+                           </span></span><div class='docblock'><p>User defined pointer.</p>
+</div><span id='structfield.uniqueId' class="structfield">
+                           <span id='uniqueId.v' class='invisible'>
+                           <code>uniqueId: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code>
+                           </span></span><div class='docblock'><p>Registered unique identifier (register it at Steinberg 3rd party support Web). This is used
+to identify a plug-in during save+load of preset and project.</p>
+</div><span id='structfield.version' class="structfield">
+                           <span id='version.v' class='invisible'>
+                           <code>version: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code>
+                           </span></span><div class='docblock'><p>Plug-in version (e.g. 1100 for v1.1.0.0).</p>
+</div><span id='structfield.processReplacing' class="structfield">
+                           <span id='processReplacing.v' class='invisible'>
+                           <code>processReplacing: <a class="type" href="../../vst2/api/type.ProcessProc.html" title="type vst2::api::ProcessProc">ProcessProc</a></code>
+                           </span></span><div class='docblock'><p>Process audio samples in replacing mode.</p>
+</div><span id='structfield.processReplacingF64' class="structfield">
+                           <span id='processReplacingF64.v' class='invisible'>
+                           <code>processReplacingF64: <a class="type" href="../../vst2/api/type.ProcessProcF64.html" title="type vst2::api::ProcessProcF64">ProcessProcF64</a></code>
+                           </span></span><div class='docblock'><p>Process double-precision audio samples in replacing mode.</p>
+</div><span id='structfield.future' class="structfield">
+                           <span id='future.v' class='invisible'>
+                           <code>future: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 56]</a></code>
+                           </span></span><div class='docblock'><p>Reserved for future use (please zero).</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../../vst2/api/struct.AEffect.html" title="struct vst2::api::AEffect">AEffect</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/vst2/api.rs.html#135-146' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.get_plugin' class="method"><span id='get_plugin.v' class='invisible'><code>unsafe fn <a href='#method.get_plugin' class='fnname'>get_plugin</a>(&amp;mut self) -&gt; &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="trait" href="../../vst2/plugin/trait.Plugin.html" title="trait vst2::plugin::Plugin">Plugin</a>&gt;</code></span></h4>
+<div class='docblock'><p>Return handle to Plugin object. Only works for plugins created using this library.</p>
+</div><h4 id='method.drop_plugin' class="method"><span id='drop_plugin.v' class='invisible'><code>unsafe fn <a href='#method.drop_plugin' class='fnname'>drop_plugin</a>(&amp;mut self)</code></span></h4>
+<div class='docblock'><p>Drop the Plugin object. Only works for plugins created using this library.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vst2";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

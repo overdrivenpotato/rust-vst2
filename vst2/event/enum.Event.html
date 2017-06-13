@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Event` enum in crate `vst2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Event">
+
+    <title>vst2::event::Event - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum Event</p><div class="block items"><ul><li><a href="#variants">Variants</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../index.html'>vst2</a>::<wbr><a href='index.html'>event</a></p><script>window.sidebarCurrent = {name: 'Event', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>vst2</a>::<wbr><a href='index.html'>event</a>::<wbr><a class="enum" href=''>Event</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/vst2/event.rs.html#10-64' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Event&lt;'a&gt; {
+    Midi {
+        data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 3]</a>,
+        delta_frames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+        live: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+        note_length: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>&gt;,
+        note_offset: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>&gt;,
+        detune: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i8.html">i8</a>,
+        note_off_velocity: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    },
+    SysEx {
+        payload: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;'a [</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>,
+        delta_frames: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    },
+    Deprecated(<a class="struct" href="../../vst2/api/struct.Event.html" title="struct vst2::api::Event">Event</a>),
+}</pre><div class='docblock'><p>A VST event.</p>
+</div><h2 id='variants' class='variants'>Variants</h2>
+<span id='variant.Midi' class='variant'><span id='Midi.v' class='invisible'><code>Midi</code></span></span><div class='docblock'><p>A midi event.</p>
+
+<p>These are sent to the plugin before <code>Plugin::processing()</code> or <code>Plugin::processing_f64()</code> is
+called.</p>
+</div><span class='docblock autohide sub-variant' id='variant.Midi.fields'><h3 class='fields'>Fields of <code>Midi</code></h3>
+
+                           <table><tr><td id='variant.Midi.field.data'><span id='Midi.v.data.v' class='invisible'><code>data:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 3]</a></code></span></td><td><div class='docblock'><p>The raw midi data associated with this event.</p>
+</div></td></tr><tr><td id='variant.Midi.field.delta_frames'><span id='Midi.v.delta_frames.v' class='invisible'><code>delta_frames:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code></span></td><td><div class='docblock'><p>Number of samples into the current processing block that this event occurs on.</p>
+
+<p>E.g. if the block size is 512 and this value is 123, the event will occur on sample
+<code>samples[123]</code>.</p>
+</div></td></tr><tr><td id='variant.Midi.field.live'><span id='Midi.v.live.v' class='invisible'><code>live:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></td><td><div class='docblock'><p>This midi event was created live as opposed to being played back in the sequencer.</p>
+
+<p>This can give the plugin priority over this event if it introduces a lot of latency.</p>
+</div></td></tr><tr><td id='variant.Midi.field.note_length'><span id='Midi.v.note_length.v' class='invisible'><code>note_length:&nbsp;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>&gt;</code></span></td><td><div class='docblock'><p>The length of the midi note associated with this event, if available.</p>
+</div></td></tr><tr><td id='variant.Midi.field.note_offset'><span id='Midi.v.note_offset.v' class='invisible'><code>note_offset:&nbsp;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>&gt;</code></span></td><td><div class='docblock'><p>Offset in samples into note from note start, if available.</p>
+</div></td></tr><tr><td id='variant.Midi.field.detune'><span id='Midi.v.detune.v' class='invisible'><code>detune:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i8.html">i8</a></code></span></td><td><div class='docblock'><p>Detuning between -63 and +64 cents.</p>
+</div></td></tr><tr><td id='variant.Midi.field.note_off_velocity'><span id='Midi.v.note_off_velocity.v' class='invisible'><code>note_off_velocity:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code></span></td><td><div class='docblock'><p>Note off velocity between 0 and 127.</p>
+</div></td></tr></table></span><span id='variant.SysEx' class='variant'><span id='SysEx.v' class='invisible'><code>SysEx</code></span></span><div class='docblock'><p>A system exclusive event.</p>
+
+<p>This is just a block of data and it is up to the plugin to interpret this. Generally used
+by midi controllers.</p>
+</div><span class='docblock autohide sub-variant' id='variant.SysEx.fields'><h3 class='fields'>Fields of <code>SysEx</code></h3>
+
+                           <table><tr><td id='variant.SysEx.field.payload'><span id='SysEx.v.payload.v' class='invisible'><code>payload:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;'a [</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></code></span></td><td><div class='docblock'><p>The SysEx payload.</p>
+</div></td></tr><tr><td id='variant.SysEx.field.delta_frames'><span id='SysEx.v.delta_frames.v' class='invisible'><code>delta_frames:&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code></span></td><td><div class='docblock'><p>Number of samples into the current processing block that this event occurs on.</p>
+
+<p>E.g. if the block size is 512 and this value is 123, the event will occur on sample
+<code>samples[123]</code>.</p>
+</div></td></tr></table></span><span id='variant.Deprecated' class='variant'><span id='Deprecated.v' class='invisible'><code>Deprecated(<a class="struct" href="../../vst2/api/struct.Event.html" title="struct vst2::api::Event">Event</a>)</code></span></span><div class='docblock'><p>A deprecated event.</p>
+
+<p>Passes the raw midi event structure along with this so that implementors can handle
+optionally handle this event.</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="../../vst2/api/struct.Event.html" title="struct vst2::api::Event">Event</a>&gt; for <a class="enum" href="../../vst2/event/enum.Event.html" title="enum vst2::event::Event">Event</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/vst2/event.rs.html#66-103' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from' class="method"><span id='from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(event: <a class="struct" href="../../vst2/api/struct.Event.html" title="struct vst2::api::Event">Event</a>) -&gt; <a class="enum" href="../../vst2/event/enum.Event.html" title="enum vst2::event::Event">Event</a>&lt;'a&gt;</code></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vst2";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

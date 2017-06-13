@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PluginLoader` struct in crate `vst2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PluginLoader">
+
+    <title>vst2::host::PluginLoader - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct PluginLoader</p><div class="block items"><ul><li><a href="#methods">Methods</a></li></ul></div><p class='location'><a href='../index.html'>vst2</a>::<wbr><a href='index.html'>host</a></p><script>window.sidebarCurrent = {name: 'PluginLoader', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>vst2</a>::<wbr><a href='index.html'>host</a>::<wbr><a class="struct" href=''>PluginLoader</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/vst2/host.rs.html#257-261' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct PluginLoader&lt;T:&nbsp;<a class="trait" href="../../vst2/host/trait.Host.html" title="trait vst2::host::Host">Host</a>&gt; { /* fields omitted */ }</pre><div class='docblock'><p>Wrapper for an externally loaded VST plugin.</p>
+
+<p>The only functionality this struct provides is loading plugins, which can be done via the
+<a href="#method.load"><code>load</code></a> method.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="../../vst2/host/trait.Host.html" title="trait vst2::host::Host">Host</a>&gt; <a class="struct" href="../../vst2/host/struct.PluginLoader.html" title="struct vst2::host::PluginLoader">PluginLoader</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/vst2/host.rs.html#278-377' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.load' class="method"><span id='load.v' class='invisible'><code>fn <a href='#method.load' class='fnname'>load</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;path: &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/std/path/struct.Path.html" title="struct std::path::Path">Path</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;host: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html" title="struct alloc::arc::Arc">Arc</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/std/sync/mutex/struct.Mutex.html" title="struct std::sync::mutex::Mutex">Mutex</a>&lt;T&gt;&gt;<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../vst2/host/struct.PluginLoader.html" title="struct vst2::host::PluginLoader">PluginLoader</a>&lt;T&gt;, <a class="enum" href="../../vst2/host/enum.PluginLoadError.html" title="enum vst2::host::PluginLoadError">PluginLoadError</a>&gt;</code></span></h4>
+<div class='docblock'><p>Load a plugin at the given path with the given host.</p>
+
+<p>Because of the possibility of multi-threading problems that can occur when using plugins,
+the host must be passed in via an <code>Arc&lt;Mutex&lt;T&gt;&gt;</code> object. This makes sure that even if the
+plugins are multi-threaded no data race issues can occur.</p>
+
+<p>Upon success, this method returns a <a href="."><code>PluginLoader</code></a> object which you can use to call
+<a href="#method.instance"><code>instance</code></a> to create a new instance of the plugin.</p>
+
+<h1 id='example' class='section-header'><a href='#example'>Example</a></h1>
+<pre class="rust rust-example-rendered">
+<span class="comment">// ...</span>
+<span class="kw">let</span> <span class="ident">host</span> <span class="op">=</span> <span class="ident">Arc</span>::<span class="ident">new</span>(<span class="ident">Mutex</span>::<span class="ident">new</span>(<span class="ident">MyHost</span>::<span class="ident">new</span>()));
+
+<span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">plugin</span> <span class="op">=</span> <span class="ident">PluginLoader</span>::<span class="ident">load</span>(<span class="ident">path</span>, <span class="ident">host</span>.<span class="ident">clone</span>()).<span class="ident">unwrap</span>();
+
+<span class="kw">let</span> <span class="ident">instance</span> <span class="op">=</span> <span class="ident">plugin</span>.<span class="ident">instance</span>().<span class="ident">unwrap</span>();
+<span class="comment">// ...</span></pre>
+
+<h1 id='linuxwindows' class='section-header'><a href='#linuxwindows'>Linux/Windows</a></h1>
+<ul>
+<li>This should be a path to the library, typically ending in <code>.so</code>/<code>.dll</code>.</li>
+<li>Possible full path: <code>/home/overdrivenpotato/.vst/u-he/Zebra2.64.so</code></li>
+<li>Possible full path: <code>C:\Program Files (x86)\VSTPlugins\iZotope Ozone 5.dll</code></li>
+</ul>
+
+<h1 id='os-x' class='section-header'><a href='#os-x'>OS X</a></h1>
+<ul>
+<li>This should point to the mach-o file within the <code>.vst</code> bundle.</li>
+<li>Plugin: <code>/Library/Audio/Plug-Ins/VST/iZotope Ozone 5.vst</code></li>
+<li>Possible full path:
+<code>/Library/Audio/Plug-Ins/VST/iZotope Ozone 5.vst/Contents/MacOS/PluginHooksVST</code></li>
+</ul>
+</div><h4 id='method.instance' class="method"><span id='instance.v' class='invisible'><code>fn <a href='#method.instance' class='fnname'>instance</a>(&amp;mut self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../vst2/host/struct.PluginInstance.html" title="struct vst2::host::PluginInstance">PluginInstance</a>, <a class="enum" href="../../vst2/host/enum.PluginLoadError.html" title="enum vst2::host::PluginLoadError">PluginLoadError</a>&gt;</code></span></h4>
+<div class='docblock'><p>Try to create an instance of this VST plugin.</p>
+
+<p>If the instance is successfully created, a <a href="struct.PluginInstance.html"><code>PluginInstance</code></a>
+is returned. This struct implements the <a href="../plugin/trait.Plugin.html"><code>Plugin</code> trait</a>.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "vst2";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
