@@ -130,6 +130,7 @@ pub mod channels;
 pub mod event;
 pub mod host;
 pub mod plugin;
+pub mod midi;
 mod interfaces;
 
 use api::{HostCallbackProc, AEffect};
