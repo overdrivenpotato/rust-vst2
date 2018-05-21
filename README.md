@@ -3,6 +3,9 @@
 [![Appveyor Build][appv-img]][appv-url]
 [![crates.io][crates-img]][crates-url]
 
+This crate is no longer maintained.  Please refer to [the `vst` crate repo](https://github.com/rust-dsp/rust-vst) for an actively developed repository.
+----
+
 A library to help facilitate creating VST plugins in rust.
 
 This library is a work in progress and as such does not yet implement all
